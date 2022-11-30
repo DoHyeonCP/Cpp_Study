@@ -1,0 +1,53 @@
+# Cpp_Study
+# include <iostream>
+
+using namespace std;
+
+int main()
+{
+   return 0;
+}
+ ---------------------------------------------------------------------------------
+  // if문 (x, y입력시 대소관계를 나타내는 코드 작성 
+void ifPractice(x,y)
+{
+
+  cin >> x;
+  cin >> y;
+  
+    if(x > y)
+    {
+      x > y;
+      cout << x << endl;
+    else
+    {
+      cout << y << endl;
+    }
+}
+
+-----------------------------------------------------------------------------------
+// 0~3 사이 정수 입력시 + 2 해주는 것
+void switchcasePractice()
+{
+    int x;
+    cin >> x;
+
+    switch (x)
+    {
+    case 0:
+        cout << "2";
+        break;
+    case 1:
+        cout << "3";
+        break;
+    case 2:
+        cout << "4";
+        break;
+    case 3:
+        cout << "5";
+        break;
+    }
+
+    cout << endl;
+
+}
