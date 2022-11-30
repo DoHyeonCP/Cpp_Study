@@ -51,3 +51,133 @@ void switchcasePractice()
     cout << endl;
 
 }
+----------------------------------------------------------------------------------------
+// goto (제곱근을 구하되 음수가 입력된다면 다시 실행되도록 만들 것)
+void gotoPractice1()
+{ 
+	double x;
+
+tryagain :
+
+	cout << "Enter a non-negative number" << endl;
+	cin >> x;
+
+	if (x < 0.0)
+		goto tryagain;
+
+	cout << sqrt(x) << endl;
+
+}
+
+-------------------------------------------------------------------------------------------
+// while (1부터 10까지, 메모리 누수 주의)
+void whilePractice()
+{
+	int count = 0;
+	while (true)
+	{
+		cout << count << endl;
+		++count;
+		
+		if (count == 11) break;
+	}
+}
+//(1, 1 2, 1 2 3, 1 2 3 4, 1 2 3 4 5 출력)
+void whilePractice2()
+{
+	int outer_count = 1;
+
+	while (outer_count <= 5)
+	{
+		int inner_count = 1;
+		while (inner_count <= outer_count)
+		{
+			cout << inner_count++ << " ";
+		}
+		 
+		cout << endl;
+		++outer_count;
+	}
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------
+//do-While문
+void dowhilePractice()
+{
+   int selection; // must be declared outside do/while loop
+   
+   do
+   {
+      cout << "1. add" << endl;
+      cout << "2. sub" << endl;
+      cout << "3. mult" << endl;
+      cout << "4.div" << endl;
+      cin >> selection;
+   } while (selection <=0 || selection >= 5);
+   
+   cout << "You selected" << selection << endl;
+}
+
+-----------------------------------------------------------------------------------------------
+// for문 (자연수 j가 1부터 9까지 반복되는 동안 자연수 i가 각 자연수마다 1부터 9까지 반복 되는 코드)
+void forPractice()
+{
+    for (int j = 0; j <= 9; ++j)
+        for (int i = 0; i <= 9; ++i)
+        {
+            cout << i << " " << j << endl;
+        }
+
+}
+----------------------------------------------------------------
+// continue의 잘못된 사용법
+
+int count(0);
+
+do
+{
+   if(count == 5)
+      coutinue
+      
+      cout << count << endl;
+      
+      count ++;
+}while(count<10);
+// 4까지 출력되고 계속 continue가 실행되어 5에서 메모리 낭비만 시키게 된다.
+-----------------------------------------------------------------------
+// 난수Randomnumer 만들기
+// 난수생성원리(컴퓨터는 랜덤으로 숫자를 만들 수 없다.)
+unsigned in prng() // Pseudo Random Number Generator
+{
+   static unsigned int seed = 5223; // seed number
+   
+   seed = 39497538 * seed + 2341315;
+   
+   return seed % 32768;
+}
+
+void RNPratice();
+{
+   for (int count = 1; count <= 100; ++count)
+   {
+      cout << ptng() << "\t";
+      
+      if (count % 5 == 0) cout << endl;
+   }
+}
+// cstdlib 이용한 난수
+#include <cstdlib> // std::radn(), std::srand()
+#include <ctime>
+
+void RNPractice2();
+{
+   std::strand(static_cast<int>(std::time(0)));
+    
+   for (int count = 1; count <= 100; ++count)
+   {
+      cout << std::rand() << "\t";
+      
+      if (count % 5 == 0) cout << endl;
+    }
+ }
